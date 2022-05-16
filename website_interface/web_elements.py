@@ -54,3 +54,5 @@ class WebsiteElements:
     fail_button = (By.ID, "fail-button")
     fail_message = (By.ID, "fail")
     success_message = (By.ID, "success")
+    settings = (By.ID, "option-settings")
+    reset_button = (By.ID, "option-restart")

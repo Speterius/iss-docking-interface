@@ -32,5 +32,7 @@ class UnitParser:
         elif s == cls.large_strength:
             return 1
         else:
-            raise ValueError(f"Error while parsing precision status.\n \
-                             Expected either noselect or noselect large. Got: {s}")
+            raise ValueError(
+                f"Error while parsing precision status.\n \
+                             Expected either noselect or noselect large. Got: {s}"
+            )

@@ -24,6 +24,10 @@ def iss_docking_interface(
     # Open the web browser:
     service = Service(webdriver_path)
     options = ChromeOptions()
+
+    # Headless option might be useful later:
+    # options.headless = True
+
     browser = Chrome(service=service, options=options)
 
     # Go to the website

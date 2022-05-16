@@ -41,12 +41,12 @@ class StateInterface:
         self.trans_str = browser.find_element(*Elements.translation_status)
 
     def get_rotation_str(self) -> int:
-        """ Returns 0 for small strength and 1 for large strength. """
+        """Returns 0 for small strength and 1 for large strength."""
         s = self.rot_str.get_attribute("class")
         return UnitParser.parse_status(s)
 
     def get_translation_str(self) -> int:
-        """ Returns 0 for small strength and 1 for large strength. """
+        """Returns 0 for small strength and 1 for large strength."""
         s = self.trans_str.get_attribute("class")
         return UnitParser.parse_status(s)
 
