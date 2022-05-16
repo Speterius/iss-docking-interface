@@ -15,10 +15,10 @@ class DockingInterface:
 
 
 def iss_docking_interface(
-        url: str = "http://localhost:5555/iss-sim.spacex.com",
-        webdriver_path: str = "./chromedriver.exe"
+    url: str = "http://localhost:5555/iss-sim.spacex.com",
+    webdriver_path: str = "./chromedriver.exe",
 ) -> (WebDriver, DockingInterface):
-    """ This is the setup routine that returns the browser and the interface.
+    """This is the setup routine that returns the browser and the interface.
     The browser has to be closed at the end."""
 
     # Open the web browser:
@@ -38,11 +38,13 @@ def iss_docking_interface(
 # Create a context manager for the interface:
 @contextmanager
 def iss_docking_context(
-        url: str = "http://localhost:5555/iss-sim.spacex.com",
-        webdriver_path: str = "./chromedriver.exe"
+    url: str = "http://localhost:5555/iss-sim.spacex.com",
+    webdriver_path: str = "./chromedriver.exe",
 ):
-    """ This is a context that can be used via the with iss_docking_context() as iss: syntax """
-    browser, docking_interface = iss_docking_interface(url=url, webdriver_path=webdriver_path)
+    """This is a context that can be used via the with iss_docking_context() as iss: syntax"""
+    browser, docking_interface = iss_docking_interface(
+        url=url, webdriver_path=webdriver_path
+    )
 
     try:
         yield docking_interface

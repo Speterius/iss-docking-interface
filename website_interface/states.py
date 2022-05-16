@@ -36,6 +36,20 @@ class StateInterface:
             *Elements.rate
         )
 
+        # Action strength status
+        self.rot_str = browser.find_element(*Elements.rotation_status)
+        self.trans_str = browser.find_element(*Elements.translation_status)
+
+    def get_rotation_str(self) -> int:
+        """ Returns 0 for small strength and 1 for large strength. """
+        s = self.rot_str.get_attribute("class")
+        return UnitParser.parse_status(s)
+
+    def get_translation_str(self) -> int:
+        """ Returns 0 for small strength and 1 for large strength. """
+        s = self.trans_str.get_attribute("class")
+        return UnitParser.parse_status(s)
+
     def get_angles(self) -> (float, float, float):
         roll = UnitParser.parse_angle(self.roll.text)
         pitch = UnitParser.parse_angle(self.pitch.text)

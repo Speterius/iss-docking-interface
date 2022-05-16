@@ -1,4 +1,4 @@
-from website_interface import setup_interface
+from website_interface import iss_docking_interface
+from selenium.webdriver.common.by import By
 
-iss = setup_interface()
-
+browser, iss = iss_docking_interface()

@@ -3,7 +3,8 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 
 
 class ActionInterface:
-    """ Finds and interacts with the web elements of actions. """
+    """Finds and interacts with the web elements of actions."""
+
     def __init__(self, browser: WebDriver):
         # Angle controls:
         self.ctrl_pitch_up = browser.find_element(*Elements.pitch_up)
@@ -19,11 +20,17 @@ class ActionInterface:
         self.ctrl_translate_up = browser.find_element(*Elements.translate_up)
         self.ctrl_translate_down = browser.find_element(*Elements.translate_down)
         self.ctrl_translate_forward = browser.find_element(*Elements.translate_forward)
-        self.ctrl_translate_backward = browser.find_element(*Elements.translate_backward)
+        self.ctrl_translate_backward = browser.find_element(
+            *Elements.translate_backward
+        )
 
         # Toggle action strength
-        self.ctrl_toggle_rotation_strength = browser.find_element(*Elements.toggle_rotation_strength)
-        self.ctrl_toggle_translation_strength = browser.find_element(*Elements.toggle_translation_strength)
+        self.ctrl_toggle_rotation_strength = browser.find_element(
+            *Elements.toggle_rotation_strength
+        )
+        self.ctrl_toggle_translation_strength = browser.find_element(
+            *Elements.toggle_translation_strength
+        )
 
     def toggle_rotation_str(self):
         self.ctrl_toggle_rotation_strength.click()

@@ -22,6 +22,10 @@ class StateElements:
     rate = (By.CSS_SELECTOR, ".rate")
     pos = (By.CSS_SELECTOR, "div")
 
+    # Action strength state
+    rotation_status = (By.ID, "precision-rotation-status")
+    translation_status = (By.ID, "precision-translation-status")
+
 
 class ActionElements:
     # Angle controls
@@ -50,4 +54,3 @@ class WebsiteElements:
     fail_button = (By.ID, "fail-button")
     fail_message = (By.ID, "fail")
     success_message = (By.ID, "success")
-
